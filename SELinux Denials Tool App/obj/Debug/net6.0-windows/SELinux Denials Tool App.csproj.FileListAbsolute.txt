@@ -21,7 +21,6 @@ D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.dll
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.pdb
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.csproj.AssemblyReference.cache
-D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux_Denials_Tool_App.Form1.resources
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.csproj.GenerateResource.cache
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.GeneratedMSBuildEditorConfig.editorconfig
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.AssemblyInfoInputs.cache
@@ -32,3 +31,4 @@ D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.pdb
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.genruntimeconfig.cache
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\ref\SELinux Denials Tool App.dll
+D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux_Denials_Tool_App.UserScreen.resources

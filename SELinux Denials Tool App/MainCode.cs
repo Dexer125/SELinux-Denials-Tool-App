@@ -1,30 +1,19 @@
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SELinux_Denials_Tool_App
 {
-    public partial class Form1 : Form
+    public static class MainCode
     {
-        String filename = String.Empty;
-        String filenamePath = String.Empty;
-        OpenFileDialog ofd;
+        static String filename = String.Empty;
+        static String filenamePath = String.Empty;
 
-        public Form1()
-        {
-            InitializeComponent();
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        public static void OpenFile(UserScreen formObject) {
             OpenFileDialog ofd = new OpenFileDialog();
 
             String cut;
@@ -35,29 +24,25 @@ namespace SELinux_Denials_Tool_App
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = "Source: " + ofd.FileName;
+                formObject.textBox1.Text = "Source: " + ofd.FileName;
 
                 cut = ofd.SafeFileName;
                 filename = ofd.FileName;
                 indexOfFilename = filename.IndexOf(cut);
                 filenamePath = filename.Remove(indexOfFilename);
-                richTextBox1.AppendText("Opening file...");
-                richTextBox1.AppendText(Environment.NewLine + File.ReadAllText(filename));
-                richTextBox1.AppendText(Environment.NewLine + "_______________________________________________________________________________________________");
-                richTextBox1.ScrollToCaret();
-                                                
+                formObject.richTextBox1.AppendText("Opening file...");
+                formObject.richTextBox1.AppendText(Environment.NewLine + File.ReadAllText(filename));
+                formObject.richTextBox1.AppendText(Environment.NewLine + "_______________________________________________________________________________________________");
+                formObject.richTextBox1.ScrollToCaret();
+
             }
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ResolveDenials();
-        }
+        public static void ResolveDenials(UserScreen formObject) {
 
-        public void ResolveDenials()
-        {
-            richTextBox1.AppendText(Environment.NewLine + "Resolving file...");
-            richTextBox1.ScrollToCaret();
+            formObject.richTextBox1.AppendText(Environment.NewLine + "Resolving file...");
+            formObject.richTextBox1.ScrollToCaret();
 
 
             String command;
@@ -68,7 +53,7 @@ namespace SELinux_Denials_Tool_App
             String allow = "allow ";
             DateTime now = DateTime.Now;
             String formattedTime = now.ToString("yyyy-MM-dd-HH-mm-ss");
-            String outputTxt = filenamePath +"resolvedDenials_" + formattedTime + ".txt";
+            String outputTxt = filenamePath + "resolvedDenials_" + formattedTime + ".txt";
             String outputTxtTemp = filenamePath + "outputTemp.txt";
             int count = 0;
 
@@ -76,8 +61,8 @@ namespace SELinux_Denials_Tool_App
             TextWriter writer = new StreamWriter(outputTxtTemp);
             String line;
 
-            
-                //File.Create(outputTxt);
+
+            //File.Create(outputTxt);
 
             /*
              
@@ -85,21 +70,22 @@ namespace SELinux_Denials_Tool_App
             Substring argumetns in C# are StartIndex and Length
              
              */
-                
-  
-            
-            while ((line = reader.ReadLine()) != null){
+
+
+
+            while ((line = reader.ReadLine()) != null)
+            {
 
                 //lineLength= line.Length;
-                
+
 
                 if (line.Contains("avc: denied") && line.Contains("tcontext=u:object_r:") && !line.Contains(":s0:"))
                 {
-                    
-                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied")+7));
-                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0 tcontext") - (line.IndexOf("scontext=u:r:")+13));
-                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(":s0 tclass") - (line.IndexOf("tcontext=u:object_r:")+20));
-                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=")+7));
+
+                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied") + 7));
+                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0 tcontext") - (line.IndexOf("scontext=u:r:") + 13));
+                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(":s0 tclass") - (line.IndexOf("tcontext=u:object_r:") + 20));
+                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=") + 7));
                     output = allow + scontext + " " + tcontext + ":" + tclass + command + ";";
 
 
@@ -140,10 +126,10 @@ namespace SELinux_Denials_Tool_App
 
                 else if (line.Contains("avc: denied") && line.Contains("tcontext=u:object_r:") && line.Contains(":s0:") && line.Contains(":s0 tclass"))
                 {
-                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied")+7));
-                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0:") - (line.IndexOf("scontext=u:r:")+13));
-                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(":s0 tclass") - (line.IndexOf("tcontext=u:object_r:")+20));
-                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=")+7));
+                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied") + 7));
+                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0:") - (line.IndexOf("scontext=u:r:") + 13));
+                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(":s0 tclass") - (line.IndexOf("tcontext=u:object_r:") + 20));
+                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=") + 7));
                     output = allow + scontext + " " + tcontext + ":" + tclass + command + ";";
 
                     writer.WriteLine(output);
@@ -172,10 +158,10 @@ namespace SELinux_Denials_Tool_App
 
                 else if (line.Contains("avc: denied") && line.Contains("tcontext=u:object_r:") && line.Contains(":s0:") && !line.Contains(":s0 tclass"))
                 {
-                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied")+7));
-                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0:") - (line.IndexOf("scontext=u:r:")+13));
-                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(" tclass") - (line.IndexOf("tcontext=u:object_r:")+20));
-                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=")+7));
+                    command = line.Substring(line.IndexOf("denied") + 7, line.IndexOf(" for") - (line.IndexOf("denied") + 7));
+                    scontext = line.Substring(line.IndexOf("scontext=u:r:") + 13, line.IndexOf(":s0:") - (line.IndexOf("scontext=u:r:") + 13));
+                    tcontext = line.Substring(line.IndexOf("tcontext=u:object_r:") + 20, line.IndexOf(" tclass") - (line.IndexOf("tcontext=u:object_r:") + 20));
+                    tclass = line.Substring(line.IndexOf("tclass=") + 7, line.IndexOf("permissive") - (line.IndexOf("tclass=") + 7));
                     output = allow + scontext + " " + tcontext + ":" + tclass + command + ";";
 
                     if (output.Contains(":s0:"))
@@ -191,24 +177,26 @@ namespace SELinux_Denials_Tool_App
                 }
 
             }
-            reader.Close(); 
+            reader.Close();
             writer.Close();
-            textBox2.Text = "Destination: " + outputTxt;
 
             if (count != 0)
             {
-                RemoveDuplicates(outputTxt, outputTxtTemp);
+                formObject.textBox2.Text = "Destination: " + outputTxt;
+                RemoveDuplicates(outputTxt, outputTxtTemp, formObject);
+                
             }
-            else{
+            else
+            {
 
-                richTextBox1.AppendText("No logs in file, check if your kernel supports Audit logging or open another file...");
-                richTextBox1.ScrollToCaret();
-                return;
+                formObject.richTextBox1.AppendText(Environment.NewLine + "No logs in file, check if your kernel supports Audit logging or open another file...");
+                formObject.richTextBox1.ScrollToCaret();
+                File.Delete(outputTxtTemp);
             }
-            
+
         }
 
-        public void RemoveDuplicates(String outpuTxt, String outputTxtTemp)
+        public static void RemoveDuplicates(String outpuTxt, String outputTxtTemp, UserScreen formObject)
         {
             StreamReader reader = new StreamReader(outputTxtTemp);
             TextWriter writer = new StreamWriter(outpuTxt);
@@ -220,30 +208,25 @@ namespace SELinux_Denials_Tool_App
                 // Write only if not present in hashset
                 if (hashSet.Add(line))
                 {
-                   writer.WriteLine(line);
+                    writer.WriteLine(line);
                 }
                 else
                 {
                     reader.ReadLine();
                 }
-              
+
             }
 
             writer.Flush();
             reader.Close();
             writer.Close();
             File.Delete(outputTxtTemp);
-            richTextBox1.AppendText(Environment.NewLine + "Resolved, check destination folder...");
-            richTextBox1.ScrollToCaret();
-
-        }
-        
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            formObject.richTextBox1.AppendText(Environment.NewLine + "Resolved, check destination folder...");
+            formObject.richTextBox1.ScrollToCaret();
 
         }
     }
+
+    
+
 }

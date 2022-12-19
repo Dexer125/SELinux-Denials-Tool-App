@@ -1,6 +1,6 @@
 ﻿namespace SELinux_Denials_Tool_App
 {
-    partial class Form1
+    partial class UserScreen
     {
         /// <summary>
         ///  Required designer variable.
@@ -61,6 +61,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(776, 299);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button2
             // 
@@ -80,7 +81,7 @@
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Destination";
             // 
-            // Form1
+            // UserScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +91,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "UserScreen";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -101,9 +102,9 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox1;
-        private RichTextBox richTextBox1;
+        public TextBox textBox1;
         private Button button2;
-        private TextBox textBox2;
+        public TextBox textBox2;
+        public RichTextBox richTextBox1;
     }
 }
