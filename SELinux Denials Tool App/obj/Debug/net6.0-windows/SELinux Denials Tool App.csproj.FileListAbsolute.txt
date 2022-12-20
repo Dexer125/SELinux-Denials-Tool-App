@@ -32,3 +32,20 @@ D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.genruntimeconfig.cache
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\ref\SELinux Denials Tool App.dll
 D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux_Denials_Tool_App.UserScreen.resources
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.exe
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.deps.json
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.runtimeconfig.json
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.dll
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\bin\Debug\net6.0-windows\SELinux Denials Tool App.pdb
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.csproj.AssemblyReference.cache
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux_Denials_Tool_App.UserScreen.resources
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.csproj.GenerateResource.cache
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.AssemblyInfoInputs.cache
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.AssemblyInfo.cs
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.csproj.CoreCompileInputs.cache
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.dll
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\refint\SELinux Denials Tool App.dll
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.pdb
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\SELinux Denials Tool App.genruntimeconfig.cache
+C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\obj\Debug\net6.0-windows\ref\SELinux Denials Tool App.dll

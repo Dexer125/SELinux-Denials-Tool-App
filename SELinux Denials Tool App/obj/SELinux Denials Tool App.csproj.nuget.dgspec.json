@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj": {}
+    "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj": {}
   },
   "projects": {
-    "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj": {
+    "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
+        "projectUniqueName": "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
         "projectName": "SELinux Denials Tool App",
-        "projectPath": "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
-        "packagesPath": "C:\\Users\\timot\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\obj\\",
+        "projectPath": "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
+        "packagesPath": "C:\\Users\\Timotej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\timot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Timotej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -62,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

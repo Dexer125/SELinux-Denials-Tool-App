@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SELinux_Denials_Tool_App
-build_property.ProjectDir = D:\Development\SELinux-Denials-Tool-App\SELinux Denials Tool App\
+build_property.ProjectDir = C:\Users\Timotej\Documents\C#\SELinux Denials Tool App\SELinux-Denials-Tool-App\SELinux Denials Tool App\

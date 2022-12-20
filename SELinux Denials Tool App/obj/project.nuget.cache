@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uO0kDch/D2vxEF/tb1mKWRz9B+muUEKHEamYU+ASKyP24KzcJXdkSq/cD7s6bC/EK26O7ooeIW4a9IKSpuVC6w==",
+  "dgSpecHash": "+o0et+TDkevoyzZfH7Nh7QFLZ1XMTt7qxtYfL0e9MEOgZ6l7q+7V79I4GcwJUW9on6dosguAPy9Vy8wA5VeyrA==",
   "success": true,
-  "projectFilePath": "D:\\Development\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
+  "projectFilePath": "C:\\Users\\Timotej\\Documents\\C#\\SELinux Denials Tool App\\SELinux-Denials-Tool-App\\SELinux Denials Tool App\\SELinux Denials Tool App.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

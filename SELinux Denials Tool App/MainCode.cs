@@ -10,13 +10,14 @@ namespace SELinux_Denials_Tool_App
 {
     public static class MainCode
     {
-        static String filename = String.Empty;
-        static String filenamePath = String.Empty;
+        static string filename = string.Empty;
+        static string filenamePath = string.Empty;
 
         public static void OpenFile(UserScreen formObject) {
-            OpenFileDialog ofd = new OpenFileDialog();
+            
+            OpenFileDialog ofd = new();
 
-            String cut;
+            string cut;
             int indexOfFilename;
             ofd.InitialDirectory = "c:\\";
             ofd.Filter = "txt files (*.txt)|*.txt";
@@ -30,9 +31,10 @@ namespace SELinux_Denials_Tool_App
                 filename = ofd.FileName;
                 indexOfFilename = filename.IndexOf(cut);
                 filenamePath = filename.Remove(indexOfFilename);
+
                 formObject.richTextBox1.AppendText("Opening file...");
                 formObject.richTextBox1.AppendText(Environment.NewLine + File.ReadAllText(filename));
-                formObject.richTextBox1.AppendText(Environment.NewLine + "_______________________________________________________________________________________________");
+                formObject.richTextBox1.AppendText(Environment.NewLine + "_____________________________________________________________________________________________________________________________________________");
                 formObject.richTextBox1.ScrollToCaret();
 
             }
@@ -44,30 +46,27 @@ namespace SELinux_Denials_Tool_App
             formObject.richTextBox1.AppendText(Environment.NewLine + "Resolving file...");
             formObject.richTextBox1.ScrollToCaret();
 
-
-            String command;
-            String scontext;
-            String tcontext;
-            String tclass;
-            String output;
-            String allow = "allow ";
+            string command;
+            string scontext;
+            string tcontext;
+            string tclass;
+            string output;
+            string allow = "allow ";
             DateTime now = DateTime.Now;
-            String formattedTime = now.ToString("yyyy-MM-dd-HH-mm-ss");
-            String outputTxt = filenamePath + "resolvedDenials_" + formattedTime + ".txt";
-            String outputTxtTemp = filenamePath + "outputTemp.txt";
+            string formattedTime = now.ToString("yyyy-MM-dd-HH-mm-ss");
+            string outputTxt = filenamePath + "resolvedDenials_" + formattedTime + ".txt";
+            string outputTxtTemp = filenamePath + "outputTemp.txt";
             int count = 0;
 
-            StreamReader reader = new StreamReader(filename);
+            StreamReader reader = new(filename);
             TextWriter writer = new StreamWriter(outputTxtTemp);
-            String line;
+            string line;
 
-
-            //File.Create(outputTxt);
 
             /*
              
              Substring arguments in Java are BeginIndex and EndIndex
-            Substring argumetns in C# are StartIndex and Length
+             Substring argumetns in C# are StartIndex and Length
              
              */
 
@@ -75,8 +74,6 @@ namespace SELinux_Denials_Tool_App
 
             while ((line = reader.ReadLine()) != null)
             {
-
-                //lineLength= line.Length;
 
 
                 if (line.Contains("avc: denied") && line.Contains("tcontext=u:object_r:") && !line.Contains(":s0:"))
@@ -92,7 +89,6 @@ namespace SELinux_Denials_Tool_App
                     writer.WriteLine(output);
                     writer.Flush();
                     count++;
-
 
                 }
 
@@ -151,6 +147,7 @@ namespace SELinux_Denials_Tool_App
                         output = output.Replace(output.Substring(output.IndexOf(":s0:"), (output.IndexOf(";") + 1) - output.IndexOf(":s0:")), "");
                         output = output + ":" + tclass + command + ";";
                     }
+
                     writer.WriteLine(output);
                     writer.Flush();
                     count++;
@@ -169,6 +166,7 @@ namespace SELinux_Denials_Tool_App
                         output = output.Replace(output.Substring(output.IndexOf(":s0:"), (output.IndexOf(";") + 1) - output.IndexOf(":s0:")), "");
                         output = output + ":" + tclass + command + ";";
                     }
+
                     writer.WriteLine(output);
                     writer.Flush();
                     count++;
@@ -183,6 +181,7 @@ namespace SELinux_Denials_Tool_App
             if (count != 0)
             {
                 formObject.textBox2.Text = "Destination: " + outputTxt;
+
                 RemoveDuplicates(outputTxt, outputTxtTemp, formObject);
                 
             }
@@ -191,17 +190,18 @@ namespace SELinux_Denials_Tool_App
 
                 formObject.richTextBox1.AppendText(Environment.NewLine + "No logs in file, check if your kernel supports Audit logging or open another file...");
                 formObject.richTextBox1.ScrollToCaret();
+
                 File.Delete(outputTxtTemp);
             }
 
         }
 
-        public static void RemoveDuplicates(String outpuTxt, String outputTxtTemp, UserScreen formObject)
+        public static void RemoveDuplicates(string outpuTxt, string outputTxtTemp, UserScreen formObject)
         {
             StreamReader reader = new StreamReader(outputTxtTemp);
             TextWriter writer = new StreamWriter(outpuTxt);
-            HashSet<String> hashSet = new HashSet<String>();
-            String line;
+            HashSet<string> hashSet = new HashSet<string>();
+            string line;
             while ((line = reader.ReadLine()) != null)
             {
 
@@ -220,7 +220,9 @@ namespace SELinux_Denials_Tool_App
             writer.Flush();
             reader.Close();
             writer.Close();
+
             File.Delete(outputTxtTemp);
+
             formObject.richTextBox1.AppendText(Environment.NewLine + "Resolved, check destination folder...");
             formObject.richTextBox1.ScrollToCaret();
 
