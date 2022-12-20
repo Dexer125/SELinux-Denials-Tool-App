@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace SELinux_Denials_Tool_App
     {
         static string filename = string.Empty;
         static string filenamePath = string.Empty;
-
+        
+        
         public static void OpenFile(UserScreen formObject) {
             
             OpenFileDialog ofd = new();
@@ -25,7 +27,7 @@ namespace SELinux_Denials_Tool_App
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                formObject.textBox1.Text = "Source: " + ofd.FileName;
+                formObject.textBox1.Text = ofd.FileName;
 
                 cut = ofd.SafeFileName;
                 filename = ofd.FileName;
@@ -180,7 +182,7 @@ namespace SELinux_Denials_Tool_App
 
             if (count != 0)
             {
-                formObject.textBox2.Text = "Destination: " + outputTxt;
+                formObject.textBox2.Text = /*"Destination: " +*/ outputTxt;
 
                 RemoveDuplicates(outputTxt, outputTxtTemp, formObject);
                 
@@ -223,10 +225,27 @@ namespace SELinux_Denials_Tool_App
 
             File.Delete(outputTxtTemp);
 
-            formObject.richTextBox1.AppendText(Environment.NewLine + "Resolved, check destination folder...");
+            formObject.richTextBox1.AppendText(Environment.NewLine + "Resolved, check destination folder or open...");
             formObject.richTextBox1.ScrollToCaret();
+            formObject.button3.Visible= true;
+
+          
+            
+            
+        }
+
+        public static void OpenOutputFile(UserScreen formObject) {
+
+
+                string outpuTxt = formObject.textBox2.Text;
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = outpuTxt;
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            
 
         }
+
     }
 
     
